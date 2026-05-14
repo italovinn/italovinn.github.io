@@ -5,6 +5,12 @@ const en = {
         about: "About",
         contact: "Contact",
     },
+
+    home: {
+        portfolio: "Portfolio",
+        role: "Back-End Developer | Fullstack Developer",
+        stack: "Java • Spring Boot • JavaScript • TypeScript • React • Docker",
+    },
 }
 
 export default en
