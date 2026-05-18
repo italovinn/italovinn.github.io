@@ -1,3 +1,5 @@
+import {ButtonLanguage} from "../ui/Button"
+
 type NavBarProps = {
     translations: any
     language: string
@@ -101,25 +103,10 @@ function NavBar({
                         </li>
                     </ul>
                 </div>
-                <button
-                    onClick={() => setLanguage(language === "pt" ? "en" : "pt")}
-                    className="
-                        rouded-lg
-                        border
-                        border-zinc-700
-                        bg-zinc-900
-                        px-4
-                        py-2
-                        text-sm
-                        font-medium
-                        text-white
-                        translation
-                        hover:border-blue-500
-                        hover:bg-blue-500/10
-                    "
-                >
-                    {language === "pt" ? "PT" : "EN"}
-                </button>
+                <ButtonLanguage
+                    language={language}
+                    setLanguage={setLanguage}
+                />
             </nav>
         </header>
     )

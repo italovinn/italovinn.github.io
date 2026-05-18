@@ -1,3 +1,5 @@
+import {Button} from "../components/ui/Button"
+
 type HomeProps = {
     translations: any
 }
@@ -10,11 +12,15 @@ function Home({ translations }: HomeProps){
                     {translations.home.portfolio}
                 </p>
 
-                <h1 className="text-6x1 font-bolt text-white">
+                <h1 className="text-6xl font-bold text-white">
                     Ítalo Vinhas
                 </h1>
+                
+                <h3 className="mt-2 text-xl font-semibold text-zinc-300">
+                    {translations.home.principalRole}
+                </h3>
 
-                <p className="mt-6 text-lg text-zinc-400">
+                <p className="mt-4 text-lg text-zinc-400">
                     {translations.home.role}
                 </p>
 
@@ -23,37 +29,13 @@ function Home({ translations }: HomeProps){
                 </p>
 
                 <div className="mt-10 flex justify-center gap-4">
-                    <button
-                        className="
-                            rounded-x1
-                            bg-blue-600
-                            px-6
-                            py-3
-                            font-medium
-                            text-white
-                            transition
-                            hover:bg-blue-500
-                        "
-                    >
+                    <Button variant="primary">
                         GitHub
-                    </button>
+                    </Button>
 
-                    <button
-                        className="
-                            rounded-x1
-                            border
-                            border-zinc-700
-                            px-5
-                            py-3
-                            font-medium
-                            text-white
-                            transition
-                            hover:border-violet-500
-                            hover:bg-violet-500/10
-                        "
-                    >
+                    <Button variant="secondary">
                         LinkedIn
-                    </button>
+                    </Button>
                 </div>
             </div>
         </section>

@@ -8,6 +8,7 @@ const en = {
 
     home: {
         portfolio: "Portfolio",
+        principalRole: "Software Engineer",
         role: "Back-End Developer | Fullstack Developer",
         stack: "Java • Spring Boot • JavaScript • TypeScript • React • Docker",
     },
