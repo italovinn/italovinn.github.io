@@ -5,6 +5,8 @@ import Footer from "./components/layout/Footer"
 import Home from "./pages/Home"
 import pt from "./locales/pt"
 import en from "./locales/en"
+import VantaBackground from "./components/effects/VantaBackground";
+import AnimatedBackground from "./components/effects/AnimatedBackground";
 
 
 function App() {
@@ -12,12 +14,21 @@ function App() {
   const translations = language === "pt" ? pt : en
 
   return (
-    <main className="min-h-screen bg-zinc-950 text-white">
-      <NavBar
-        translations = {translations}
-        language = {language}
-        setLanguage = {setLanguage}
-      />
+    <main className="relative min-h-screen overflow-hidden bg-zinc-950 text-white">
+
+      <AnimatedBackground />
+
+      <div className="relative z-10">
+
+        <NavBar
+          translations = {translations}
+          language = {language}
+          setLanguage = {setLanguage}
+        />
+        
+      </div>
+
+      
 
       <Home translations={translations} />
 

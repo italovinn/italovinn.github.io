@@ -19,27 +19,29 @@ function NavBar({
                 z-50
                 w-full
                 border-b
-                border-zinc-800
-                bg-zinc-950/80
-                backdrop-blur
+                border-white/10
+                bg-black/30
+                backdrop-blur-xl
+                shadow-lg
+                shadow-black/20
             "
         >
             <nav
                 className="
                     mx-auto
                     flex
-                    max-w-7x1
+                    max-w-7xl
                     items-center
                     justify-between
                     px-6
-                    py-4
+                    py-5
                 "
             >
                 <h1
                     className="
-                        text-x1
-                        font-bol
-                        tracking-wide
+                        text-xl
+                        font-black
+                        tracking-tight
                         text-white
                     "
                 >
@@ -61,8 +63,21 @@ function NavBar({
                             <a
                                 href="#"
                                 className="
-                                    transition
-                                    hover:text-blue-500
+                                    ttransition-all
+                                    duration-300
+                                    hover:-translate-y-0.5
+                                    hover:text-white
+
+                                    after:absolute
+                                    after:-bottom-1
+                                    after:left-0
+                                    after:h-[2px]
+                                    after:w-0
+                                    after:bg-blue-500
+                                    after:transition-all
+                                    after:duration-300
+
+                                    hover:after:w-full
                                 "
                             >
                                 {translations.navbar.home}
@@ -72,8 +87,21 @@ function NavBar({
                             <a
                                 href="#"
                                 className="
-                                    transition
-                                    hover:text-violet-500
+                                    transition-all
+                                    duration-300
+                                    hover:-translate-y-0.5
+                                    hover:text-white
+
+                                    after:absolute
+                                    after:-bottom-1
+                                    after:left-0
+                                    after:h-[2px]
+                                    after:w-0
+                                    after:bg-blue-500
+                                    after:transition-all
+                                    after:duration-300
+
+                                    hover:after:w-full
                                 "
                             >
                                 {translations.navbar.projects}
@@ -83,8 +111,21 @@ function NavBar({
                             <a
                                 href="#"
                                 className="
-                                    transition
-                                    hover:text-red-500
+                                    transition-all
+                                    duration-300
+                                    hover:-translate-y-0.5
+                                    hover:text-white
+
+                                    after:absolute
+                                    after:-bottom-1
+                                    after:left-0
+                                    after:h-[2px]
+                                    after:w-0
+                                    after:bg-blue-500
+                                    after:transition-all
+                                    after:duration-300
+
+                                    hover:after:w-full
                                 "
                             >
                                 {translations.navbar.about}
@@ -94,8 +135,21 @@ function NavBar({
                             <a
                                 href="#"
                                 className="
-                                    transition
+                                    transition-all
+                                    duration-300
+                                    hover:-translate-y-0.5
                                     hover:text-white
+
+                                    after:absolute
+                                    after:-bottom-1
+                                    after:left-0
+                                    after:h-[2px]
+                                    after:w-0
+                                    after:bg-blue-500
+                                    after:transition-all
+                                    after:duration-300
+
+                                    hover:after:w-full
                                 "
                             >
                                 {translations.navbar.contact}
