@@ -24,24 +24,27 @@ function Projects({ translations }: ProjectProps) {
                 setError(false)
 
                 const response = await fetch(
-                    `https://api.github.com/users/${GITHUB_USERNAME}/repos?sort=updated&direction=desc&per_page=100&type=owner`,
+                    `${import.meta.env.BASE_URL}projects.json`,
                     { signal: controller.signal }
                 )
 
                 if (!response.ok) {
-                    throw new Error("GitHub API error")
+                    throw new Error(
+                        `Erro ao carregar projects.json: ${response.status}`
+                    )
                 }
 
                 const data: GitHubProject[] = await response.json()
 
-                setProjects(
-                    data.filter(
-                        (project) => !project.fork && !project.archived
-                    )
-                )
+                if (!Array.isArray(data)) {
+                    throw new Error("Formato inválido de projects.json")
+                }
+
+                setProjects(data)
             } catch (err) {
                 if (controller.signal.aborted) return
-                console.error(err)
+
+                console.error("Erro ao carregar projetos:", err)
                 setError(true)
             } finally {
                 if (!controller.signal.aborted) {
@@ -54,6 +57,8 @@ function Projects({ translations }: ProjectProps) {
 
         return () => controller.abort()
     }, [])
+
+
 
     return (
         <section

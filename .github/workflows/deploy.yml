@@ -5,6 +5,8 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
+  schedule:
+    - cron: "0 9 * * *"
 
 permissions:
   contents: read
@@ -34,6 +36,23 @@ jobs:
         working-directory: portifolio
         run: npm ci
 
+      - name: Atualizar lista de projetos
+        working-directory: portifolio
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: node scripts/fetch-projects.mjs
+
+      # Instalar navegador para capturar as interfaces
+      - name: Instalar Chromium para previews
+        working-directory: portifolio
+        run: npx playwright install --with-deps chromium
+
+      # Gerar miniaturas reais dos projetos
+      - name: Gerar miniaturas dos projetos
+        working-directory: portifolio
+        run: node scripts/generate-previews.mjs
+
+      # Compilar o portfólio com as miniaturas
       - name: Build website
         working-directory: portifolio
         run: npm run build
@@ -46,6 +65,7 @@ jobs:
   deploy:
     needs: build
     runs-on: ubuntu-latest
+
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
