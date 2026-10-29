@@ -8,8 +8,6 @@ type ProjectProps = {
     translations: any
 }
 
-const GITHUB_USERNAME = "italovinn"
-
 function Projects({ translations }: ProjectProps) {
     const [projects, setProjects] = useState<GitHubProject[]>([])
     const [loading, setLoading] = useState(true)
