@@ -3,9 +3,11 @@ import "./styles/globals.css"
 import NavBar from "./components/layout/NavBar"
 import Footer from "./components/layout/Footer"
 import Home from "./pages/Home"
+import Projects from "./pages/Projects"
+import About from "./pages/About"
+import Contact from "./pages/Contact"
 import pt from "./locales/pt"
 import en from "./locales/en"
-import VantaBackground from "./components/effects/VantaBackground";
 import AnimatedBackground from "./components/effects/AnimatedBackground";
 
 
@@ -31,8 +33,11 @@ function App() {
       
 
       <Home translations={translations} />
+      <About translations={translations} />
+      <Projects translations={translations}/>
+      <Contact translations={translations} />
 
-      <Footer />
+      <Footer translations={translations} />
     </main>   
   )
 }

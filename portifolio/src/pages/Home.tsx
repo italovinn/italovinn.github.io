@@ -8,7 +8,10 @@ type HomeProps = {
 
 function Home({ translations }: HomeProps){
     return(
-        <section className="relative flex min-h-screen items-center overflow-hidden px-8">
+        <section
+            id="home"
+            className="relative flex min-h-screen scroll-mt-20 items-center overflow-hidden px-8"
+        >
             <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-16 md:grid-cols-2">
 
                 <motion.div
@@ -40,16 +43,33 @@ function Home({ translations }: HomeProps){
                     <p className="mt-2 text-zinc-500">
                         {translations.home.stack}
                     </p>
+                    
+                    <div className="mt-10 flex items-center justify-start gap-4">
+                        <a
+                            href="https://github.com/italovinn"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="Visitar meu GitHub"
+                            className="inline-block"
+                        >
+                            <Button variant="primary">
+                                GitHub
+                            </Button>
+                        </a>
 
-                    <div className="mt-10 flex justify-center gap-4">
-                        <Button variant="primary">
-                            GitHub
-                        </Button>
-
-                        <Button variant="secondary">
-                            LinkedIn
-                        </Button>
+                        <a
+                            href="https://www.linkedin.com/in/italovinn/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="Visitar meu LinkedIn"
+                            className="inline-block"
+                        >
+                            <Button variant="secondary">
+                                LinkedIn
+                            </Button>
+                        </a>
                     </div>
+
                 </motion.div>
 
 
